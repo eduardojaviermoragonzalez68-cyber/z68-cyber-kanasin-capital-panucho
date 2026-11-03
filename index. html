@@ -1,1 +1,254 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KANASÍN LA CAPITAL DEL PANUCHO - EDUARDO JAVIER MORA GONZALEZ - LALO MORA - MORITA EL MOTOTAXISTA</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#7a0a12;font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:950px;margin:0 auto;background:#fff;min-height:100vh;margin-left:180px}
+.topbar{background:#000;color:#ffcc00;font-size:9px;padding:4px;text-align:center;position:sticky;top:0;z-index:600}
+.header-fixed{background:#fff;display:flex;align-items:center;padding:6px 10px;position:sticky;top:17px;z-index:600;border-bottom:3px solid #ffcc00}
+.foto-mini{width:55px;height:55px;border-radius:50%;border:3px solid #7a0a12;object-fit:cover}
+.header-fixed b{color:#7a0a12;font-size:13px;margin-left:8px;line-height:1.1}
+.header-fixed span{font-size:9px;color:#000;display:block;font-weight:400}
+.menu{background:#7a0a12;display:flex;overflow-x:auto;position:sticky;top:79px;z-index:600;border-bottom:3px solid #ffcc00}
+.menu-item{color:#fff;padding:14px 14px;font-size:10.5px;font-weight:900;white-space:nowrap;cursor:pointer;position:relative;border-right:1px solid #900}
+.menu-item:hover{background:#a00}
+.submenu{display:none;position:absolute;top:100%;left:0;background:#7a0a12;min-width:360px;border:2px solid #ffcc00;z-index:700}
+.menu-item:hover .submenu{display:block}
+.submenu div{padding:11px;color:#fff;font-size:11px;border-bottom:1px solid #900;cursor:pointer;font-weight:700}
+.submenu div:hover{background:#fff;color:#7a0a12}
+.barra-lateral{position:fixed;top:125px;left:0;width:180px;background:#111;border-right:3px solid #ffcc00;height:calc(100vh - 125px);z-index:550;overflow-y:auto}
+.barra-lateral div{color:#fff;padding:12px 10px;font-size:10px;font-weight:900;border-bottom:1px solid #333;cursor:pointer}
+.barra-lateral div:hover{background:#7a0a12;color:#ffcc00}
+.barra-lateral b{display:block;color:#ffcc00;font-size:8px}
+.barra-lateral small{font-weight:400;font-size:8px;color:#ccc;display:block}
+.hero{background:linear-gradient(90deg,#7a0a12 60%,#ffcc00);color:#fff;padding:12px;text-align:center}
+.hero h1{font-size:18px;line-height:1.1}
+.hero h1 b{color:#ffcc00}
+.hero h2{font-size:12px;color:#fff;margin-top:4px}
+.hero h3{font-size:10px;color:#ffcc00;margin-top:2px}
+.img-main{width:100%;display:block;border-bottom:4px solid #ffcc00}
+.img-perfil{width:190px;height:190px;object-fit:cover;border-radius:50%;border:4px solid #ffcc00;display:block;margin:12px auto}
+.ventana{display:none;padding:12px;background:#fffbe6;border:2px solid #7a0a12;margin:10px;border-radius:8px}
+.ventana.activa{display:block}
+.ventana h4{background:#7a0a12;color:#fff;padding:8px;border-radius:6px;font-size:12px;margin-bottom:8px;text-transform:uppercase}
+.ventana p,.ventana li{font-size:11px;line-height:1.35;margin:6px 0}
+.ventana ul{padding-left:16px}
+.file{border:1px solid #7a0a12;padding:8px;margin:6px 0;background:#fff;border-radius:6px;font-size:11px}
+.file a{color:#7a0a12;font-weight:900}
+.dates{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:10px 0}
+.date-box{border:2px solid #7a0a12;padding:6px;text-align:center;background:#fff;border-radius:6px}
+.date-box span{font-weight:900;font-size:15px;display:block}
+.btn{background:#25D366;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:900;display:inline-block;margin:6px;font-size:12px}
+.btn-blue{background:#0d47a1}
+.legal{background:#111;color:#ccc;font-size:7px;line-height:1.3;padding:10px;text-align:justify}
+.legal b{color:#ffcc00}
+input,textarea,select{width:100%;padding:10px;border:2px solid #7a0a12;border-radius:6px;margin:5px 0;font-size:11px}
+.oculto-admin{display:none;background:#111;color:#ffcc00;padding:12px;border-radius:8px;margin-top:10px}
+@media(max-width:700px){.barra-lateral{position:relative;width:100%;height:auto;top:0;display:flex;overflow-x:auto}.wrap{margin-left:0;max-width:100%}}
+</style>
+</head>
+<body>
+<div class="topbar">KANASÍN LA CAPITAL DEL PANUCHO | MORENA La Esperanza de México | CONCIENCIA PURA 24/7 | PARTICIPACIÓN CIUDADANA</div>
+<div class="header-fixed">
+<img class="foto-mini" src="image2.jpg" alt="Lalo Mora">
+<b>KANASÍN LA CAPITAL DEL PANUCHO<span>EDUARDO JAVIER MORA GONZALEZ - LALO MORA - MORITA EL MOTOTAXISTA</span></b>
+</div>
+<div class="menu">
+<div class="menu-item" onclick="abrir('inicio')">INICIO</div>
+<div class="menu-item" onclick="abrir('biografia')">BIOGRAFÍA</div>
+<div class="menu-item">ASAMBLEAS ▼
+<div class="submenu">
+<div onclick="abrir('asamblea-informativa')">📁 INFORMATIVAS - Art 15-20 CDT</div>
+<div onclick="abrir('asamblea-constitutiva')">📁 CONSTITUTIVAS - Art 19-20</div>
+<div onclick="abrir('asamblea-resolutiva')">📁 RESOLUTIVAS - Art 26-33</div>
+</div>
+</div>
+<div class="menu-item" onclick="abrir('territorial')">REPORTE TERRITORIAL</div>
+<div class="menu-item" onclick="abrir('reporta')">REPORTA TU GESTIÓN</div>
+<div class="menu-item" onclick="abrir('iniciativas')">INICIATIVAS VECINALES</div>
+</div>
+<div class="barra-lateral">
+<div onclick="abrir('calendario')"><b>01</b>📅 CALENDARIO OFICIAL<small>18 OCT - 13 DIC - 31 DIC</small></div>
+<div onclick="abrir('blindaje')"><b>02</b>📄 BLINDAJE LEGAL 95 PÁG<small>ESTATUTO + LEYES</small></div>
+<div onclick="abrir('contacto')"><b>03</b>📞 CONTACTO DIRECTO<small>LALO MORA</small></div>
+<div onclick="abrir('plan-desarrollo')"><b>04</b>📘 PLAN DESARROLLO MUNICIPAL<small>VISIÓN IDEAS PROPUESTAS</small></div>
+<div onclick="abrir('mapa')"><b>05</b>🗺️ MAPA COLONIAS<small>KANASÍN</small></div>
+<div onclick="abrir('privacidad')"><b>06</b>📜 PARTICIPACIÓN CIUDADANA<small>AVISO PRIVACIDAD</small></div>
+</div>
+<div class="wrap">
+<div class="hero">
+<h1>KANASÍN <b>LA CAPITAL DEL PANUCHO</b></h1>
+<h2>EDUARDO JAVIER MORA GONZALEZ<br>LALO MORA<br>MORITA EL MOTOTAXISTA</h2>
+<h3>Aspirante para la Coordinación Municipal de los Comités de Defensa de la Transformación y Soberanía Nacional Kanasín Yucatán<br>PROCESO INTERNO MORENA 2026</h3>
+<p style="font-size:10px;margin-top:6px">Asambleas: Informativas | Constitutivas | Resolutivas<br>Reporte Territorial Regeneración Nacional | Reporta tu Gestión | INICIATIVAS VECINALES para Infraestructura y Desarrollo<br>Visión de Ideas y Propuestas para el Plan Desarrollo Municipal<br>Con el Pueblo Todo Sin el Pueblo Nada - Conciencia Pura 24/7 - Participación Ciudadana</p>
+</div>
+<img class="img-main" src="foto-principal.jpg">
+<img class="img-perfil" src="image2.jpg">
+<div id="inicio" class="ventana activa">
+<h4>KANASÍN LA CAPITAL DEL PANUCHO - LALO MORA - MORITA EL MOTOTAXISTA - ASPIRANTE COORDINACIÓN MUNICIPAL COMITÉS DEFENSA TRANSFORMACIÓN Y SOBERANÍA NACIONAL - PROCESO INTERNO MORENA 2026</h4>
+<p><b>BLINDAJE COMPLETO ASPIRANTE:</b><br><br>
+<b>1. ESTATUTO MORENA PRINCIPIOS NORMAS REGLAMENTOS INCISOS:</b> Art 1-3 No Mentir No Robar No Traicionar, Art 4-6 Protagonista Cambio Verdadero buena fama pública curso INFP Art 6 bis bajo protesta no VPMRG Art 46 c,n, Art 7-13 voto universal libre secreto sin planillas no familiares 4° directa Art 43 d,e equidad género Art 43 a VPMRG Art 42 c paridad Art 44 bis, Art 14,14 Bis,41 Bis Reglas Únicas órganos CDT Asambleas Coordinaciones Congresos Consejos CEE CEN CNHJ INFP convocatoria 7 días publicación morena estrados Regeneración quorum mitad más uno, Art 15-20 CDT Municipal base territorial mínimo 5 sin límite tareas organización electoral defensa voto difusión formación círculos vinculación movimientos Plan Acción CEN reuniones cada 30 días Asamblea Municipal cada 3 meses Art 19 funciones Art 20, Art 21-41 Congresos Distritales Estatales Nacional Consejo Nacional CEN, Art 42-75 Electoral Honestidad Finanzas INFP Transitorios<br><br>
+<b>2. LEY GOBIERNO MUNICIPIOS ESTADO YUCATÁN:</b> Art 2 Municipio libre base división territorial, Art 30-41 facultades Ayuntamiento Presidente Municipal ejecutor acuerdos administración pública municipal, Art 77-82 y 85 Plan Municipal Desarrollo participación ciudadana, Art 114-118 Gaceta Municipal publicación, Art 40-41 coordinación Federación Estado Municipio<br><br>
+<b>3. IEPAC - LIPEEY:</b> Art 16 partidos entidades interés público, Art 19 derechos obligaciones, Art 196 Actividades Ordinarias permanentes no constituyen actos anticipados precampaña campaña, Art 198 Procesos internos regulados estatutos no son actos anticipados si ajustan normativa interna, Art 195-210 nulidad compra presión coacción determinante, Art 23-25 competencia TEEY<br><br>
+<b>4. INE - LGIPE - LGPP - CPEUM:</b> LGIPE Art 3,5,25,34,41 asuntos internos partidos, LGPP Art 3,5,25,34,43,51 paridad liderazgo mujeres VPMRG formación defensa voto, CPEUM Art 6 libertad manifestación ideas, Art 9 asociación reunión pacífica, Art 35 derechos ciudadanía votar ser votado asociarse, Art 40 República representativa democrática laica federal, Art 41 partidos entidades interés público autonomía, Art 115 Municipio libre autonomía Ayuntamiento, Art 26 Plan Nacional Desarrollo, Art 1,4,6,9,26,28,30,39,40,41,115 Tres Niveles Gobierno<br><br>
+<b>5. TRES NIVELES GOBIERNO:</b> Federación - Plan Nacional Desarrollo Art 26 CPEUM, Estado - Plan Estatal Yucatán Ley Planeación, Municipio - Plan Municipal Desarrollo Art 77-82 Ley Municipios Yucatán coordinación Art 115 CPEUM Art 30,40,41 Ley Municipios<br><br>
+Documento dirigido exclusivamente a Protagonistas Cambio Verdadero Art 4,5,6 Estatuto Art 196,198 LIPEEY No contiene llamado voto ciudadanía general No difunde plataforma electoral No solicita voto cargo elección popular Objeto organización interna formación política concientización fortalecimiento CDT Art 15-20 Declaración Principios Programa Acción</p>
+<div class="dates">
+<div class="date-box"><b>REGISTRO</b><span>18 OCT 2026</span><small>Art 24,33</small></div>
+<div class="date-box"><b>LIMITE ORG</b><span>13 DIC 2026</span><small>Art 41 Bis</small></div>
+<div class="date-box"><b>RESULTADOS</b><span>31 DIC 2026</span><small>Art 44,44 Bis</small></div>
+</div>
+</div>
+<div id="biografia" class="ventana">
+<h4>BIOGRAFÍA - LALO MORA - MORITA EL MOTOTAXISTA - 10 AÑOS LLEVANDO A LAS FAMILIAS</h4>
+<p>Eduardo Javier Mora Gonzalez, Kanasín La Capital del Panucho, 10 años mototaxista, Protagonista Cambio Verdadero Art 4-6, curso INFP Art 6 bis, principios No Mentir No Robar No Traicionar Art 1-3, sin antecedentes VPMRG Art 46, participación ciudadana 24/7 Conciencia Pura.</p>
+</div>
+<div id="asamblea-informativa" class="ventana">
+<h4>📁 ASAMBLEAS INFORMATIVAS - COMITÉS DEFENSA TRANSFORMACIÓN Y SOBERANÍA NACIONAL</h4>
+<p>Art 15-20 CDT Municipal mínimo 5 protagonistas LIPEEY 196,198 blindaje. Sube PDFs a <b>pdf/asambleas-informativas/</b> y aparecen automático para MORENA NACIONAL.</p>
+<div id="pdf-informativa"></div>
+</div>
+<div id="asamblea-constitutiva" class="ventana">
+<h4>📁 ASAMBLEAS CONSTITUTIVAS CDT</h4>
+<p>Acta lista asistencia fotos plan acción Art 19-20. Sube PDFs a <b>pdf/asambleas-constitutivas/</b></p>
+<div id="pdf-constitutiva"></div>
+</div>
+<div id="asamblea-resolutiva" class="ventana">
+<h4>📁 ASAMBLEAS RESOLUTIVAS</h4>
+<p>Resolutivo final Art 26-33. Sube PDFs a <b>pdf/asambleas-resolutivas/</b></p>
+<div id="pdf-resolutiva"></div>
+</div>
+<div id="territorial" class="ventana">
+<h4>REPORTE TERRITORIAL REGENERACIÓN NACIONAL</h4>
+<p>Entrega periódico Regeneración por colonias - Visión territorial Kanasín La Capital del Panucho. Sube a <b>videos/regeneracion/</b> y <b>colonias/</b></p>
+<div id="videos-regeneracion"></div>
+<div id="colonias-lista"></div>
+</div>
+<div id="reporta" class="ventana">
+<h4>REPORTA TU GESTIÓN - PARTICIPACIÓN CIUDADANA - ARCHIVO OCULTO SOLO PARA TI</h4>
+<p>Reporte ciudadano se guarda oculto solo visible para ti con clave morita2026. Para ellos no se ve.</p>
+<select id="tipo"><option>💡 Alumbrado</option><option>🚧 Bacheo</option><option>💧 Agua</option><option>🗑️ Basura</option><option>Otro</option></select>
+<input id="colonia" placeholder="Colonia">
+<input id="calle" placeholder="Calle">
+<textarea id="desc" placeholder="Describe gestión"></textarea>
+<a class="btn" href="#" onclick="guardarGestion();return false;">ENVIAR GESTIÓN OCULTA</a>
+<div style="margin-top:12px">
+<input type="password" id="clave" placeholder="Clave: morita2026">
+<a class="btn btn-blue" href="#" onclick="verOculto();return false;">VER OCULTAS (solo tú)</a>
+<div id="admin" class="oculto-admin"></div>
+</div>
+</div>
+<div id="iniciativas" class="ventana">
+<h4>INICIATIVAS VECINALES PARA INFRAESTRUCTURA Y DESARROLLO - KANASÍN LA CAPITAL DEL PANUCHO</h4>
+<p>Visión Metropolitana Kanasín - Mérida - Umán desarrollo sustentable Art 115 CPEUM Art 77-82 Ley Municipios Yucatán. Infraestructura vial, alumbrado LED, agua drenaje, basura 24/7, parques deportivos, mercado panuchos turismo gastronómico, movilidad mototaxis, seguridad vecinal, participación ciudadana Art 9,35 CPEUM.</p>
+<div id="pdf-vision"></div>
+<div id="pdf-iniciativas"></div>
+<div id="pdf-otros"></div>
+</div>
+<div id="calendario" class="ventana">
+<h4>CALENDARIO OFICIAL PROCESO INTERNO MORENA 2026 - COORDINACIÓN MUNICIPAL COMITÉS DEFENSA TRANSFORMACIÓN Y SOBERANÍA NACIONAL</h4>
+<ul>
+<li>Convocatoria Registro: Hasta 18 Oct 2026 Art 24,33 Estatuto - 30 días anticipación Art 25</li>
+<li>Organización Interna Actividades Ordinarias CDT: Hasta 13 Dic 2026 Art 41 Bis Estatuto - LIPEEY 196,198 no actos anticipados - LGPP 43,51</li>
+<li>Dictamen Resultados Encuesta Insaculación: Hasta 31 Dic 2026 Art 44,44 Bis,46 dictamen inapelable Comisión Elecciones Encuestas</li>
+<li>Blindaje: Solo organización territorial Art 196,198 LIPEEY Art 3,5,25,34 LGIPE Art 6,9,35,40,41,115 CPEUM Ley Municipios Yucatán Art 2,30,40,41,77,80,82,85,114-118</li>
+</ul>
+</div>
+<div id="blindaje" class="ventana">
+<h4>BLINDAJE COMPLETO 95 PÁGINAS - ASPIRANTE COORDINACIÓN MUNICIPAL COMITÉS DEFENSA TRANSFORMACIÓN Y SOBERANÍA NACIONAL - ESTATUTO MORENA + LEY MUNICIPIOS YUCATÁN + IEPAC + INE + TRES NIVELES GOBIERNO</h4>
+<p>Ya incluido completo en Inicio - Este apartado es para consulta rápida para MORENA NACIONAL</p>
+<ul>
+<li><b>ESTATUTO:</b> Cap I Art 1-3 principios, Cap III Art 4-6 afiliación, Art 7-13 democráticos, Cap IV Art 14,14 Bis,15-20 CDT Municipal, Art 41 Bis Reglas, Art 21-39 bis Congresos Consejos CEE CEN CNHJ, Art 42-75 Electoral Honestidad Finanzas INFP, Transitorios I-V</li>
+<li><b>LEY MUNICIPIOS YUCATÁN:</b> Art 2,30,40,41,77,80,82,85,114-118</li>
+<li><b>IEPAC LIPEEY:</b> Art 16,19,196,198,23-25,195-210</li>
+<li><b>INE LGIPE LGPP CPEUM:</b> LGIPE 3,5,25,34,41 - LGPP 3,5,25,34,43,51 - CPEUM 6,9,35,40,41,115,26,1,4,28,30,39</li>
+<li><b>TRES NIVELES:</b> Federación Estado Municipio coordinados Art 115 CPEUM</li>
+</ul>
+</div>
+<div id="contacto" class="ventana">
+<h4>CONTACTO DIRECTO - LALO MORA - MORITA EL MOTOTAXISTA</h4>
+<p>WhatsApp: 9991234567<br>Correo: eduardojaviermoragonzalez@gmail.com<br>Kanasín La Capital del Panucho - Participación Ciudadana - Conciencia Pura 24/7</p>
+</div>
+<div id="plan-desarrollo" class="ventana">
+<h4>📘 VISIÓN DE IDEAS Y PROPUESTAS PARA EL PLAN DESARROLLO MUNICIPAL - KANASÍN LA CAPITAL DEL PANUCHO - EN ESPERA LEY DE INGRESOS LEY DE HACIENDA DOF</h4>
+<p><b>PROPUESTA CIUDADANA DE PLAN MUNICIPAL DE DESARROLLO 2024-2027 - BLINDADA ASPIRANTE COORDINACIÓN MUNICIPAL COMITÉS DEFENSA TRANSFORMACIÓN Y SOBERANÍA NACIONAL:</b><br><br>
+Documento de trabajo interno actividad ordinaria formación política deliberación territorial plan de acción CDT Art 15-20 Estatuto MORENA Declaración Principios Art 1-3 Programa Acción No es acto de autoridad no es Plan oficial Ayuntamiento no aprobado por Cabildo no publicado en Diario Oficial Gobierno Estado Yucatán ni Gaceta Municipal conforme Art 77-82 y 114-118 Ley Gobierno Municipios Yucatán Art 2,30,40,41,77,80,82,85.<br><br>
+Se elabora en espera publicación Ley de Ingresos y Ley de Hacienda Municipal en Diario Oficial Federación y Diario Oficial Estado conforme Art 115 CPEUM Art 30,40,41 Ley Municipios Alineado a Plan Nacional Desarrollo Art 26 CPEUM Plan Estatal Yucatán LGPP Art 3,5,25,34,43,51 IEPAC LIPEEY Art 16,19,196,198 Actividades Ordinarias No Son Actos Anticipados LGIPE Art 3,5,25,34 CPEUM Art 6,9,35,40,41,115 Tres Niveles Federación Estado Municipio coordinados Art 1,4,6,9,26,28,30,39,40,41,115.<br><br>
+<b>Contenido propuesto:</b> Diagnóstico colonias, infraestructura vial bacheo, alumbrado LED, agua drenaje, basura 24/7, parques deportivos, mercado panuchos turismo gastronómico Kanasín Capital del Panucho, movilidad mototaxis regularizados, seguridad vecinal, participación ciudadana.<br><br>
+Sube tu PDF a carpeta <b>pdf/plan-desarrollo-municipal/</b> y Ley de Ingresos Hacienda a <b>pdf/ley-ingresos-hacienda/</b> y aparecen automático aquí abajo.</p>
+<div id="pdf-plan-desarrollo"></div>
+<div id="pdf-ley-ingresos"></div>
+</div>
+<div id="mapa" class="ventana">
+<h4>MAPA COLONIAS KANASÍN LA CAPITAL DEL PANUCHO</h4>
+<p>Mapa territorial de colonias donde entregas Regeneración Nacional - Participación Ciudadana</p>
+</div>
+<div id="privacidad" class="ventana">
+<h4>AVISO PRIVACIDAD - PARTICIPACIÓN CIUDADANA - MORENA - VPMRG - PARIDAD SUSTANTIVA</h4>
+<p>Datos personales protegidos LGPP Art 43,51 Estatuto Art 49 Ter VPMRG I-XXII medidas cautelares protección víctima No se comparten datos Solo uso interno organización territorial CDT Art 15-20 Paridad Art 44 Bis plataformas acciones prevenir atender erradicar VPMRG Art 42 c Participación Ciudadana Art 9,35 CPEUM</p>
+</div>
+<div class="legal">
+<b>KANASÍN LA CAPITAL DEL PANUCHO - EDUARDO JAVIER MORA GONZALEZ - LALO MORA - MORITA EL MOTOTAXISTA - ASPIRANTE COORDINACIÓN MUNICIPAL COMITÉS DEFENSA TRANSFORMACIÓN Y SOBERANÍA NACIONAL KANASÍN YUCATÁN PROCESO INTERNO MORENA 2026 - BLINDAJE COMPLETO 95 PÁGINAS</b> Asambleas Informativas Constitutivas Resolutivas Reporte Territorial Regeneración Nacional Reporta tu Gestión INICIATIVAS VECINALES para Infraestructura y Desarrollo Visión de Ideas y Propuestas para el Plan Desarrollo Municipal Con el Pueblo Todo Sin el Pueblo Nada Conciencia Pura 24/7 Participación Ciudadana Documento dirigido exclusivamente a Protagonistas Cambio Verdadero Art 4,5,6 Estatuto Art 196 y 198 LIPEEY Art 3,5,25,34 LGIPE Art 6,9,35 CPEUM No contiene llamado voto ciudadanía general no difunde plataforma electoral no solicita voto cargo elección popular Objeto organización interna formación política concientización fortalecimiento CDT Art 15-20 Declaración Principios Programa Acción Interpretación contraria viola derecho asociación Art 9 y 35 CPEUM autonomía partidos Art 41 CPEUM y 34 LGIPE Blindado VPMRG Art 49 Ter paridad Art 44 Bis Sanciones Art 64-65 competencia Honestidad y Justicia Art 49-53 Medio impugnación Art 44 Bis c,d LALO MORA Aspirante Coordinación Municipal Comités Defensa Transformación y Soberanía Nacional Kanasín Yucatán Proceso Interno MORENA 2026 Registro 18 Oct 2026 Límite 13 Dic 2026 Resultados 31 Dic 2026 Estatuto MORENA Cap I Art 1-3 No Mentir No Robar No Traicionar Cap III Art 4-6 Protagonistas Art 7-13 Democráticos Cap IV Art 14 14 Bis 15-20 CDT Municipal Art 41 Bis Reglas Art 21-23 Exterior Art 24-26 Distritales Art 27-33 Estatal Art 34-39 bis Nacional Art 40-41 Cap V Art 42-46 Cap VI Art 47-66 Cap VII Art 67-70 Cap VIII IX Art 71-75 Transitorios Ley Gobierno Municipios Yucatán Art 2 30 40 41 77 80 82 85 114-118 Plan Municipal Desarrollo LIPEEY IEPAC Art 16 19 196 198 Actividades Ordinarias No Son Actos Anticipados LGIPE INE Art 3 5 25 34 CPEUM Art 6 9 26 35 40 41 115 Tres Niveles Gobierno Federación Estado Municipio LGPP Art 3 5 25 34 43 51 Impreso por Tecnosoluciones Publicitarias 29 dic 2025 tiraje 100,000 Primera Edición Primera Reimpresión Pág 93-97 morena INFP Portada Histórica Hidalgo Juárez Zapata AMLO fondo rayos tricolor Con el Pueblo Todo Sin el Pueblo Nada Kanasín La Capital del Panucho Conciencia Pura 24/7 Participación Ciudadana
+</div>
+</div>
+<script>
+function abrir(id){
+ document.querySelectorAll('.ventana').forEach(v=>v.classList.remove('activa'));
+ const el=document.getElementById(id);
+ if(el){el.classList.add('activa'); window.scrollTo(0,320);}
+}
+const repo="z68-cyber/kanasin-capital-panucho";
+async function listar(ruta, id){
+ const c=document.getElementById(id); if(!c) return;
+ try{
+  const r=await fetch(`https://api.github.com/repos/${repo}/contents/${ruta}?t=${Date.now()}`);
+  if(!r.ok) return; const a=await r.json();
+  let l=a.filter(f=>f.type==="file" && !f.name.includes(".gitkeep")).reverse();
+  if(l.length==0) return; c.innerHTML="";
+  l.forEach(f=>{
+   if(f.name.match(/\.(mp4|webm|mov|m4v)$/i)) c.innerHTML+=`<div class="file"><video controls playsinline src="https://raw.githubusercontent.com/${repo}/main/${ruta}/${f.name}" style="width:100%;border-radius:6px"></video></div>`;
+   else if(f.name.match(/\.(jpg|jpeg|png|webp)$/i)) c.innerHTML+=`<div class="file"><img src="https://raw.githubusercontent.com/${repo}/main/${ruta}/${f.name}" style="width:100%;border-radius:6px"><br><a href="https://raw.githubusercontent.com/${repo}/main/${ruta}/${f.name}" target="_blank">${f.name}</a></div>`;
+   else c.innerHTML+=`<div class="file">📄 <a href="https://raw.githubusercontent.com/${repo}/main/${ruta}/${f.name}" target="_blank">${f.name}</a></div>`;
+  });
+ }catch(e){}
+}
+listar("pdf/asambleas-informativas","pdf-informativa");
+listar("pdf/asambleas-constitutivas","pdf-constitutiva");
+listar("pdf/asambleas-resolutivas","pdf-resolutiva");
+listar("videos/regeneracion","videos-regeneracion");
+listar("colonias","colonias-lista");
+listar("pdf/vision-metropolitana","pdf-vision");
+listar("pdf/iniciativas","pdf-iniciativas");
+listar("pdf/otros","pdf-otros");
+listar("pdf/plan-desarrollo-municipal","pdf-plan-desarrollo");
+listar("pdf/ley-ingresos-hacienda","pdf-ley-ingresos");
+function guardarGestion(){
+ const t=document.getElementById('tipo').value;
+ const col=document.getElementById('colonia').value;
+ const calle=document.getElementById('calle').value;
+ const des=document.getElementById('desc').value;
+ if(!col){alert('Pon colonia');return;}
+ let arr=JSON.parse(localStorage.getItem('gestionesPanucho')||'[]');
+ arr.push({tipo:t,colonia:col,calle:calle,desc:des,fecha:new Date().toLocaleString()});
+ localStorage.setItem('gestionesPanucho',JSON.stringify(arr));
+ alert('Gestión guardada en archivo oculto solo para ti.');
+ document.getElementById('colonia').value='';document.getElementById('calle').value='';document.getElementById('desc').value='';
+}
+function verOculto(){
+ const clave=document.getElementById('clave').value;
+ if(clave!=='morita2026'){alert('Clave incorrecta, es morita2026');return;}
+ const admin=document.getElementById('admin');
+ admin.style.display='block';
+ let arr=JSON.parse(localStorage.getItem('gestionesPanucho')||'[]');
+ if(arr.length==0){admin.innerHTML='No hay gestiones.';return;}
+ let html='<b>📁 ARCHIVO OCULTO - SOLO TÚ - PARTICIPACIÓN CIUDADANA:</b><br><br>';
+ arr.reverse().forEach((g,i)=>{html+=`<div style="border:1px solid #ffcc00;padding:6px;margin:6px 0;background:#222">${i+1}. ${g.tipo} - ${g.colonia} - ${g.calle}<br>${g.desc}<br><small>${g.fecha}</small></div>`;});
+ admin.innerHTML=html;
+}
+</script>
+</body>
+</html>
